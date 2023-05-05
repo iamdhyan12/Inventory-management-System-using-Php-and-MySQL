@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2023 at 07:57 PM
+-- Generation Time: May 05, 2023 at 07:26 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -53,25 +53,26 @@ CREATE TABLE `cart` (
   `Total` int(11) NOT NULL,
   `When_Order` int(11) NOT NULL,
   `Sold` int(11) DEFAULT 0,
-  `Left_items` int(11) NOT NULL
+  `Left_items` int(11) NOT NULL,
+  `Comments` text NOT NULL DEFAULT '-'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`SrNo`, `Name`, `Total`, `When_Order`, `Sold`, `Left_items`) VALUES
-(12, 'Rice', 800, 50, 0, 200),
-(13, 'Wheat flour', 800, 75, 0, 150),
-(14, 'Turmeric powder', 200, 25, 0, 30),
-(15, 'Cumin seeds', 100, 10, 0, 20),
-(16, 'Mustard seeds', 80, 5, 0, 15),
-(17, 'Coriander powder', 200, 30, 0, 40),
-(18, 'Garam masala', 150, 20, 0, 25),
-(19, 'Red chilli powder', 200, 15, 0, 35),
-(20, 'Jeera powder', 200, 25, 0, 30),
-(21, 'Black pepper', 50, 5, 0, 10),
-(22, 'Coconut oil', 100, 20, 0, 25);
+INSERT INTO `cart` (`SrNo`, `Name`, `Total`, `When_Order`, `Sold`, `Left_items`, `Comments`) VALUES
+(12, 'Rice', 800, 50, 14, 186, 'Dhyan2'),
+(13, 'Wheat flour', 800, 75, 0, 150, '-'),
+(14, 'Turmeric powder', 200, 25, 0, 30, '-'),
+(15, 'Cumin seeds', 100, 10, 0, 20, '-'),
+(16, 'Mustard seeds', 80, 5, 0, 15, '-'),
+(17, 'Coriander powder', 200, 30, 0, 40, '-'),
+(18, 'Garam masala', 150, 20, 0, 25, '-'),
+(19, 'Red chilli powder', 200, 15, 0, 35, '-'),
+(20, 'Jeera powder', 200, 25, 0, 30, '-'),
+(21, 'Black pepper', 50, 5, 0, 10, '-'),
+(39, 'Soap', 5000, 10, 99, 4901, 'dsfds');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +104,7 @@ ALTER TABLE `admin_info`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `SrNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `SrNo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
