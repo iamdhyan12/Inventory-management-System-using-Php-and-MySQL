@@ -25,10 +25,10 @@
       
       <li class="nav-item mr-auto">
       <li class="btn-info btn-sm active me-3" role="button" aria-pressed="true">
-        <a class="nav-link" href="/store/display.php"><h5>View Inventory</h5></a>
+        <a class="nav-link" href="/Inventory-management-System-using-Php-and-MySQL-main/display.php"><h5>View Inventory</h5></a>
       </li>
       <li class="btn-success btn-sm active me-3" role="button" aria-pressed="true">
-        <a class="nav-link" href="/store/search.php"><h5>Search Item</h5></a>
+        <a class="nav-link" href="/Inventory-management-System-using-Php-and-MySQL-main/search.php"><h5>Search Item</h5></a>
       </li>
       <li>
       
@@ -39,11 +39,11 @@
     <ul class="navbar-nav"> 
     <li class="nav-item mr-auto">
     <li class="  btn-primary btn-sm active me-3" role="button" aria-pressed="true">
-        <a class="nav-link" href="/store/index.php"><h5>Add Items </h5></a>
+        <a class="nav-link" href="/Inventory-management-System-using-Php-and-MySQL-main/index.php"><h5>Add Items </h5></a>
       </li>
 
       <li class="btn-danger btn-sm active me-3" role="button" aria-pressed="true">
-        <a class="nav-link" href="/store/logout.php"><h5>Logout </h5></a>
+        <a class="nav-link" href="/Inventory-management-System-using-Php-and-MySQL-main/logout.php"><h5>Logout </h5></a>
       </li>
 </li>
 </ul>
