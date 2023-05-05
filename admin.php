@@ -8,12 +8,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/6f163e585b.js" crossorigin="anonymous"></script>
 <style>
   .f{
     color: #FFFFFF;
   }
 </style></head>
-<body style="background-color:red;">
+<body style="background-color:lightblue;">
 
 
   <form class="" action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
@@ -21,36 +22,44 @@
     <div class="container" style="margin-top:200px;">
       <div class="row justify-content-center">
           <div class="col-lg-6">
-              <h1 class="mt-4 mb-3" style="color:#D2F015 ;">
+              <h1 class="mt-4 mb-3" style="color:purple; text-align:center;">
                   Inventory Management
-                  <br>Admin Login Portal
-                </h1>
-
-            </div>
+              </h1>
+          </div>
       </div>
-      <div class="card" style="height:300px;">
-          <div class="card-body">
 
-      <div class="row justify-content-lg-center justify-content-mb-center" >
-      <div class="col-lg-6 mb-6 ">
-      <div class="font-italic" style="font-weight:bold">Username<span style="color:red">*</span></div>
-      <div><input type="text" name="username" placeholder="Enter your username" class="form-control" value="" required></div>
-    </div>
-    </div>
-    <div class="row justify-content-lg-center justify-content-mb-center">
-    <div class="col-lg-6 mb-6 "><br>
-    <div class="font-italic"style="font-weight:bold">Password<span style="color:red">*</span></div>
-    <div><input type="password" name="password" placeholder="Enter your Password" class="form-control" value="" required></div>
-    </div>
-  </div>
-  <div class="row justify-content-lg-center justify-content-mb-center">
-    <div class="col-lg-4 mb-4 " style="text-align:center"><br>
-    <div><input type="submit" name="login" class="btn btn-primary" value="LOGIN" style="cursor:pointer">
-    <br>
-    <br>
-    
-    </div> 
-    
+      <div class="card bg-gradient" style="height:400px;background-color:lightblue;border: none;">
+      <div class="card-body">
+        <h2 class="text-center mb-5">Sign In</h2>
+        <form>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 mb-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input type="text" name="username" placeholder="Username" class="form-control form-control-lg" required autofocus>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 mb-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" name="password" placeholder="Password" class="form-control form-control-lg" required>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 mb-4 text-center">
+              <button type="submit" name="login" class="btn btn-primary btn-lg px-5">Sign In</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>    
     </div>
   </div>
     </div>
