@@ -66,7 +66,7 @@
                                             <label for="order">When to Order</label>
                                             <input type="number" class="form-control" id="order" name="order">
                                         </div>
-                                        <input type="submit" class="btn btn-primary" value="Submit">
+                                        <input type="submit" name="sub-add" class="btn btn-primary" value="Submit">
                                     </form>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                     </div>
                     <!-- php for add item  -->
                     <?php
-                        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                        if (isset($_POST['sub-add'])){
                             $localhost="localhost";
                             $username="root";
                             $pass='';
@@ -94,7 +94,7 @@
                             $sql="INSERT INTO `cart` ( `Name`, `Total`, `When_Order`, `Sold`, `Left_items`) VALUES ('$name', '$total', '$order', '$sold', '$left')";
                             $result = mysqli_query($con, $sql);
                             if($result){
-                                // secho '<script>alert("Item has been inserted")</script>';
+                                echo '<script>alert("Item has been inserted")</script>';
                                 echo "<script>window.location.href ='display.php'</script>";
                             }
                             else{
@@ -143,17 +143,17 @@
                                 $con = mysqli_connect("localhost","root","","inventory");
                                 $query = "SELECT * FROM Cart";
                                 $query_run = mysqli_query($con, $query);
-                                $sno=1;
+                                $s=1;
 
                                 if(mysqli_num_rows($query_run) > 0)
                                 {
                                     foreach($query_run as $row)
                                     {   
-                                        $sno=$sno + 1;
+                                        $s=$s + 1;
 
                                         ?>
                                         <tr>
-                                            <td><?= $sno?></td>
+                                            <td><?= $s?></td>
                                             <td><?= $row['Name']; ?></td>
                                             <td><?= $row['Total']; ?></td>
                                             <td><?= $row['When_Order']; ?></td>
@@ -188,7 +188,7 @@
 
                                                                 // Display edit form
                                                                 ?>
-                                                                <form method="post" action="display.php?editid=<?php echo $sno; ?>">
+                                                                <form method="post" action="edit.php?editid=<?php echo $sno; ?>">
                                                                 <div class="form-group">
                                                                     <label for="sold">Sold</label>
                                                                     <input type="number" name="sold" class="form-control" id="sold" value="<?php ; ?>" aria-describedby="emailHelp">
@@ -197,7 +197,7 @@
                                                                     <label for="sold">Add Comments</label>
                                                                     <input type="text" name="comments" class="form-control" id="sold" value="<?php echo $row['Comments']; ?>">
                                                                 </div>
-                                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                <button type="submit" name='sub-edit' class="btn btn-primary">Save changes</button>
                                                                 </form>
                                                                 <?php
                                                             }
@@ -233,46 +233,46 @@
 
 <!-- edit code php -->
 <?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    // if (isset($_POST['sub-edit'])){
     
-    $con = mysqli_connect("localhost","root","","inventory");
+    // $con = mysqli_connect("localhost","root","","inventory");
 
-    if(!$con){
-        echo"Connection Error : ".mysqli_connect_error()."<br>";
-    }
-    else{
-        echo"Connected to Db";
-    }
+    // if(!$con){
+    //     echo"Connection Error : ".mysqli_connect_error()."<br>";
+    // }
+    // else{
+    //     echo"Connected to Db";
+    // }
 
-     $sno=$_GET['editid'];
+    //  $sno=$_GET['editid'];
 
-     $sold=$_POST['sold'];
-     $comments=$_POST['comments'];
+    //  $sold=$_POST['sold'];
+    //  $comments=$_POST['comments'];
 
  
      
-        // Update the item in the cart table
-        $sno = $_GET['editid'];
-        $sold = $_POST['sold'];
-        $comments=$_POST['comments'];
-        $query = "UPDATE cart SET Left_items=Left_items-$sold,sold=sold + $sold , Comments='$comments'where SrNo=$sno";
-        $result = mysqli_query($con, $query);
+    //     // Update the item in the cart table
+    //     $sno = $_GET['editid'];
+    //     $sold = $_POST['sold'];
+    //     $comments=$_POST['comments'];
+    //     $query = "UPDATE cart SET Left_items=Left_items-$sold,sold=sold + $sold , Comments='$comments'where SrNo=$sno";
+    //     $result = mysqli_query($con, $query);
     
-        // Delete the last row from the table
-        $query = "DELETE FROM cart ORDER BY SrNo DESC LIMIT 1";
-        mysqli_query($con, $query);
+    //     // Delete the last row from the table
+    //     // $query = "DELETE FROM cart ORDER BY SrNo DESC LIMIT 1";
+    //     // mysqli_query($con, $query);
     
-        // Check if the update was successful
-        if ($result) {
-            echo "Item updated successfully.";
-        } else {
-            echo "Error updating item: " . mysqli_error($con);
-        }
+    //     // Check if the update was successful
+    //     if ($result) {
+    //         echo "Item updated successfully.";
+    //     } else {
+    //         echo "Error updating item: " . mysqli_error($con);
+    //     }
     
    
 
 
-    }
+    // }
 
     
 ?>
